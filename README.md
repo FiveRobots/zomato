@@ -18,7 +18,7 @@ You will also see any lint errors in the console.
 
 ### Setup
 
-You will need to add a Zomato API key before running:
+You will need to add a Zomato API key to App.js before running:
 
     this.API_KEY="ZOMATO_API_KEY_HERE";
 	
@@ -31,7 +31,7 @@ Single-select checkboxes were implemented for demonstration purposes.\
 In a production project, I would recommend either revising designs to make single select more obvious (eg radio buttons),
 or implement API middleware to cache and aggregate the data (see below) and allow multiple category searches.
 
-* Categories and Cuisines in the design were a small subset of the available options.\
+* Categories and Cuisines in the design are a small subset of the available options.\
 To keep with the provided design, these options have been hardcoded with the appropriate API values.\
 A design revision would be necessary to accomodate arbitrary filtering options.
 
@@ -46,7 +46,7 @@ Caching middleware would allow for faster response.
 
 ### Further work
 
-* This demonstration implemnetation exposes details of an external API to the end user,
+* This demonstration implementation exposes details of an external API to the end user,
 and should ideally be proxied through a middleware service. This would also allow for caching of calls
 and aggregation of multiple feeds into a common data set, which could make more data avilable to the user.\
 Licencing terms and call limits for the external API service would need to be confirmed before implementation.\
