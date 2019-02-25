@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.App {
+	font-family: 'Roboto', sans-serif;
+	color: #4e5456;
+}
+
+/* basic styles */
+h1 {
+	margin: 0;
+	visibility: hidden;
+	position: absolute;
+}
+h2 {
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 900;
+	margin: 0;
+}
+
+ul {
+	list-style: none;
+	padding-left: 0;
+	margin:0;
+}
+li {
+	margin: .5em 0;
+	font-size: 14px;
+}
+
+/* page layout */
+main {
+	clear: both;
+	position: relative;
+}
+
+main .loading-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: white;
+	z-index: 9999;
+	display: flex;
+}
+main .loading-overlay .loading-spinner {
+	margin: 0 auto;
+	align-self: center;
+}
+header.filters {
+	height: 235px;
+}
+header.filters section {
+	display: inline-block;
+	padding: 50px 35px;
+	float: left;
+}
+
+.filter-category {
+	width: 150px;
+}
+.filter-cuisine {
+	width: 500px;
+}
+.filter-cuisine ul {
+	columns: 3;
+}
+
+.filter-ranges {
+	float: right !important;
+	width: 300px;
+}
+
+.rc-slider {
+	margin-bottom: 1.5em;
+}
+.rc-slider-rail {
+	height: 8px;
+	top: 4px;
+}
+.rc-slider-track {
+	height: 8px;
+	top: 4px;
+	background-color: #50bebf;
+}
+.rc-slider-handle, .rc-slider-handle-click-focused:focus {
+	border-color: #50bebf;
+}
+
+section.results .no-results {
+	padding: 20px 50px;
+}
+section.results {
+	background-color: #e5e5e5;
+	width:400px;
+	float: left;
+	height: calc(100vh - 235px);
+	overflow-y: auto;
+}
+section.results  h2 {
+	padding: 20px 50px;
+	position: sticky;
+	top:0;
+	border-bottom: 1px solid #b2b6b7;
+	background-color: #e5e5e5;
+}
+section.results ul>li {
+	padding: 20px 50px;
+	font-size:16px;
+	margin:0;
+	border-bottom: 1px solid #b2b6b7;
+	cursor: pointer;
+}
+section.results ul>li.selected {
+	background-color: #50bebf;
+	color: white;
+}
+
+section.no-restaurant {
+	text-align: center;
+	padding: 20px;
+}
+section.restaurant {
+	width: calc(100% - 400px);
+	float: left;
+	padding: 60px 50px;
+	background-color: #f1f1f1;
+	height: calc(100vh - 235px);
+	overflow: auto;
+	box-sizing: border-box;
+}
+section.restaurant .restaurant-image {
+	float: left;
+	width: calc(50% - 40px);
+	height: auto;
+	margin-right: 40px;
+}
+section.restaurant .restaurant-noimage {
+	float: left;
+	width: calc(50% - 40px);
+	margin-right: 40px;
+	background-color: #d0d0d0;
+}
+section.restaurant .restaurant-noimage .spacer {
+	padding-top: 100%;
+}
+
+.restaurant-details {
+    display: inline-block;
+    width: calc(50% - 40px);
+}
+section.restaurant .restaurant-name {
+	text-transform: none;
+	font-size: 28px;
+}
+section.restaurant .restaurant-address {
+	font-style: normal;
+	color: #727678;
+}
+
+section.restaurant .restaurant-options {
+	margin: 1.5em 0;
+}
+
+section.restaurant .restaurant-bookings,
+section.restaurant .restaurant-delivery {
+	font-size: 16px;
+}
+section.restaurant .restaurant-bookings::before,
+section.restaurant .restaurant-delivery::before {
+	content: "";
+	display: inline-block;
+	width: 19px; height: 15px;
+	margin-right: 10px;
+	background-size: 100% 100%;
+}
+section.restaurant .restaurant-bookings.available::before,
+section.restaurant .restaurant-delivery.available::before {
+	background-image: url('./img/check.png');
+}
+section.restaurant .restaurant-bookings.unavailable::before,
+section.restaurant .restaurant-delivery.unavailable::before {
+	background-image: url('./img/cross.png');
+}
+
+section.restaurant h3 {
+	text-transform: uppercase;
+	font-weight: 900;
+	font-size: 16px;
+	margin:0;
+}
+section.restaurant .restaurant-cuisines {
+	font-size: 20px;
+}
+
+.clear-float {
+	clear: both;
+}
+
+
+/* Basic layout adjustments for smaller screen sizes */
+
+@media (width < 1170px) {
+	header.filters section.filter-ranges {
+		float: left !important;
+		width: 630px;
+		padding-top: 0;
+		clear:left;
+	}
+}
+
+@media (width < 980px) {
+	section.restaurant .restaurant-image {
+		float: none;
+		margin-bottom: 20px;
+		width: 200px;
+	}
+	section.restaurant .restaurant-details {
+		width: 100%;
+		float: none;
+	}
+}
+	
